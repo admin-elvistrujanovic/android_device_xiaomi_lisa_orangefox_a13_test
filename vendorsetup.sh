@@ -42,7 +42,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	      export LC_ALL="C"
               export FOX_MANIFEST_VER="11.0"
  	      export ALLOW_MISSING_DEPENDENCIES=true
-	      export OF_TARGET_DEVICES="lisa"
+	      export OF_TARGET_DEVICES="lisa,lisa_in,lisa_cn,lisa_global"
+	      export TARGET_DEVICE_ALT="lisa_in,lisa_cn,lisa_global"
 	      export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 
         #Debug
@@ -62,7 +63,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	#Magiskboot
 	      export OF_USE_MAGISKBOOT="1"
 	      export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
-	      export OF_PATCH_VBMETA_FLAG="1"
 
         # OTA & MIUI
               export OF_KEEP_DM_VERITY="1"
