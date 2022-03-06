@@ -10,7 +10,9 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-
+    insmod /vendor/lib/modules/goodix_core.ko
+	insmod /vendor/lib/modules/xiaomi_touch.ko
+	
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
