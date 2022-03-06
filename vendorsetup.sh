@@ -80,9 +80,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export OF_QUICK_BACKUP_LIST="/boot;/data;"
 
 	# screen settings
-	     export OF_STATUS_INDENT_LEFT=48
+	     export OF_SCREEN_H=2400
+	     export OF_STATUS_H=100
+	     export OF_STATUS_INDENT_LEFT=60
 	     export OF_STATUS_INDENT_RIGHT=48
-	     export OF_CLOCK_POS="1"
+	     export OF_CLOCK_POS="0"
 
 	#Partitions
               export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
