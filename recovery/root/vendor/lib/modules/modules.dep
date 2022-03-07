@@ -1,0 +1,3 @@
+/lib/modules/goodix_core.ko: /lib/modules/xiaomi_touch.ko
+/lib/modules/xiaomi_touch.ko:
+/lib/modules/hwid.ko:
