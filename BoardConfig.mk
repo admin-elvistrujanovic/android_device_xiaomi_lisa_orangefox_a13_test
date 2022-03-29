@@ -76,9 +76,36 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
                    androidboot.init_fatal_reboot_target=recovery"
 
 
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+ifeq ($(FOX_VARIANT),MIUI)
+   TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/miui/Image
+   BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/miui/dtbo.img
+   BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/miui/dtbs
+   
+   PRODUCT_COPY_FILES += \
+   $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/miui/modules,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules) 
+   
+else
+
+   TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/aosp/Image.gz-dtb
+   BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/aosp/dtbo.img
+   BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/aosp/dtbs
+   
+   PRODUCT_COPY_FILES += \
+   $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/aosp/modules,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules) 
+
+endif
+
+ifeq ($(FOX_VARIANT),AOSPA)
+  KERNEL_PATH := $(DEVICE_PATH)/prebuilt/AOSPA
+  TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/AOSPA/Image.gz-dtb
+  BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/AOSPA/dtbo.img
+  BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/AOSPA/dtbs
+  
+  PRODUCT_COPY_FILES += \
+   $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/AOSPA/modules,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules) 
+
+endif
+
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
