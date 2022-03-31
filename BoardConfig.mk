@@ -77,7 +77,7 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
                    iptable_raw.raw_before_defrag=1 \
                    ip6table_raw.raw_before_defrag=1 \
                    androidboot.init_fatal_reboot_target=recovery"
-
+				   
 # Kernel modules
 NEED_KERNEL_MODULE_RECOVERY := true
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
