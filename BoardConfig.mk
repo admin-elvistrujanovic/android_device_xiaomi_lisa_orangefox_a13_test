@@ -86,7 +86,7 @@ ifeq ($(FOX_VARIANT),MIUI)
    
 else
 
-   TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/aosp/Image.gz-dtb
+   TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/aosp/Image
    BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/aosp/dtbo.img
    BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/aosp/dtbs
    
@@ -97,7 +97,7 @@ endif
 
 ifeq ($(FOX_VARIANT),AOSPA)
   KERNEL_PATH := $(DEVICE_PATH)/prebuilt/AOSPA
-  TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/AOSPA/Image.gz-dtb
+  TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/AOSPA/Image
   BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/AOSPA/dtbo.img
   BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/AOSPA/dtbs
   
