@@ -55,8 +55,12 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 
-BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CLANG_COMPILE := true
+
+#BOARD_KERNEL_SEPARATED_DTBO := true
+#BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -77,12 +81,10 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
                    iptable_raw.raw_before_defrag=1 \
                    ip6table_raw.raw_before_defrag=1 \
                    androidboot.init_fatal_reboot_target=recovery"
-				   
-# Kernel modules
-NEED_KERNEL_MODULE_RECOVERY := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+
+
+TARGET_KERNEL_SOURCE := kernel/xiaomi/lisa
+TARGET_KERNEL_CONFIG := vendor/lisa-qgki_defconfig
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
