@@ -24,5 +24,9 @@ on post-fs
 
 on boot
     start health-hal-2-1
-    insmod /vendor/lib/modules/goodix_core.ko
-    insmod /vendor/lib/modules/xiaomi_touch.ko
+
+on property:twrp.modules.loaded=true
+    # Load ADSP firmware for PMIC
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/class/power_supply/battery
