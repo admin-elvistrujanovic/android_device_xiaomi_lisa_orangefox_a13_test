@@ -86,6 +86,9 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
 TARGET_KERNEL_SOURCE := kernel/xiaomi/lisa
 TARGET_KERNEL_CONFIG := vendor/lisa-qgki_defconfig
 
+# Kernel modules
+NEED_KERNEL_MODULE_RECOVERY := true
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
