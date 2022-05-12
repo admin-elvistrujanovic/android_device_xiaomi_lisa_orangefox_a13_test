@@ -1,5 +1,5 @@
 # mount point  fstype  device                             device2                flags
-
+/cache         ext4    	/dev/block/bootdevice/by-name/cache
 /metadata      ext4    /dev/block/bootdevice/by-name/metadata                    flags=display="Metadata"
 /data          ext4    /dev/block/bootdevice/by-name/userdata                    fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
 /boot          emmc    /dev/block/bootdevice/by-name/boot                        flags=backup=1;flashimg=1;slotselect
