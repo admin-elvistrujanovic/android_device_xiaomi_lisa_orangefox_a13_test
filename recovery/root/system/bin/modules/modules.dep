@@ -1,0 +1,22 @@
+/vendor/lib/modules/llcc_perfmon.ko:
+/vendor/lib/modules/icnss2.ko: /vendor/lib/modules/hwid.ko /vendor/lib/modules/device_management_service_v01.ko /vendor/lib/modules/wlan_firmware_service_v01.ko
+/vendor/lib/modules/hwid.ko:
+/vendor/lib/modules/nfc_i2c.ko:
+/vendor/lib/modules/wlan_firmware_service_v01.ko:
+/vendor/lib/modules/device_management_service_v01.ko:
+/vendor/lib/modules/usbdtp.ko:
+/vendor/lib/modules/usb_f_dtp.ko:
+/vendor/lib/modules/goodix_core.ko: /vendor/lib/modules/xiaomi_touch.ko
+/vendor/lib/modules/goodix_ts_tools.ko: /vendor/lib/modules/goodix_core.ko /vendor/lib/modules/xiaomi_touch.ko
+/vendor/lib/modules/goodix_ts_gesture.ko: /vendor/lib/modules/goodix_core.ko /vendor/lib/modules/xiaomi_touch.ko
+/vendor/lib/modules/xiaomi_touch.ko:
+/vendor/lib/modules/fpc1020_tee.ko:
+/vendor/lib/modules/ir-spi.ko:
+/vendor/lib/modules/radio-i2c-rtc6226-qca.ko:
+/vendor/lib/modules/qti_battery_charger_main.ko:
+/vendor/lib/modules/mi_thermal_interface.ko:
+/vendor/lib/modules/btpower.ko:
+/vendor/lib/modules/bt_fm_slim.ko: /vendor/lib/modules/btpower.ko /vendor/lib/modules/slimbus.ko
+/vendor/lib/modules/leds-qti-flash.ko: /vendor/lib/modules/qti_battery_charger_main.ko
+/vendor/lib/modules/slimbus.ko:
+/vendor/lib/modules/slimbus-ngd.ko: /vendor/lib/modules/slimbus.ko
