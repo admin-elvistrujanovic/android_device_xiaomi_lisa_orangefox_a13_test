@@ -1,7 +1,7 @@
 import /init.recovery.qcom_decrypt.rc
 
 on init
-    chmod 0777 /system/bin/kernel-script.sh
+    chmod 0777 /system/bin/kernel_script.sh
     start kernel-script
     write /sys/class/backlight/panel0-backlight/brightness 200
 
@@ -20,6 +20,13 @@ on fs
     # Set fscklog permission
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
+
+service kernel-script /system/bin/kernel_script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
 
 on post-fs
     start boot-hal-1-1
