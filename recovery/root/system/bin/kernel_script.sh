@@ -1,17 +1,17 @@
-#!/system/bin/modules/sh
+#!/vendor/lib/modules/sh
 # load different kernel modules, depending on the kernel
 
 load_ofox()
 {
- insmod /system/bin/modules/q6_pdr_dlkm.ko
- insmod /system/bin/modules/q6_notifier_dlkm.k
- insmod /system/bin/modules/snd_event_dlkm.ko
- insmod /system/bin/modules/apr_dlkm.ko
- insmod /system/bin/modules/adsp_loader_dlkm.ko
- insmod /system/bin/modules/goodix_core.ko
- insmod /system/bin/modules/hwid.ko
- insmod /system/bin/modules/qti_battery_charger_main.ko
- insmod /system/bin/modules/xiaomi_touch.ko
+ insmod /vendor/lib/modules/q6_pdr_dlkm.ko
+ insmod /vendor/lib/modules/q6_notifier_dlkm.k
+ insmod /vendor/lib/modules/snd_event_dlkm.ko
+ insmod /vendor/lib/modules/apr_dlkm.ko
+ insmod /vendor/lib/modules/adsp_loader_dlkm.ko
+ insmod /vendor/lib/modules/goodix_core.ko
+ insmod /vendor/lib/modules/hwid.ko
+ insmod /vendor/lib/modules/qti_battery_charger_main.ko
+ insmod /vendor/lib/modules/xiaomi_touch.ko
  echo "DEBUG: Loading ofox kernel modules" >> $LOG
 
 }
