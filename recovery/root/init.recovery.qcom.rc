@@ -1,8 +1,6 @@
 import /init.recovery.qcom_decrypt.rc
 
 on init
-    chmod 0777 /system/bin/kernel_script.sh
-    start kernel-script
     write /sys/class/backlight/panel0-backlight/brightness 200
 
     # Create location for fs_mgr to store abbreviated output from filesystem
@@ -21,7 +19,7 @@ on fs
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
 
-service kernel-script /system/bin/kernel_script.sh
+service kernel-script /system/bin/kernel-script.sh
     user root
     group root
     disabled
@@ -32,6 +30,8 @@ on post-fs
     start boot-hal-1-1
 
 on boot
+    chmod 0777 /system/bin/kernel-script.sh
+    start kernel-script
     start health-hal-2-1
 
 on property:twrp.modules.loaded=true

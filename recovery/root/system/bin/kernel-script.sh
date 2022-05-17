@@ -1,4 +1,4 @@
-#!/vendor/lib/modules/sh
+#/system/bin/sh
 # load different kernel modules, depending on the kernel
 
 load_ofox()
