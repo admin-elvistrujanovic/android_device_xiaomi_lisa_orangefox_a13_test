@@ -1,18 +1,10 @@
-#/system/bin/sh
+#!/system/bin/sh
 # load different kernel modules, depending on the kernel
 
 load_ofox()
 {
- insmod /vendor/lib/modules/q6_pdr_dlkm.ko
- insmod /vendor/lib/modules/q6_notifier_dlkm.k
- insmod /vendor/lib/modules/snd_event_dlkm.ko
- insmod /vendor/lib/modules/apr_dlkm.ko
- insmod /vendor/lib/modules/adsp_loader_dlkm.ko
- insmod /vendor/lib/modules/goodix_core.ko
- insmod /vendor/lib/modules/hwid.ko
- insmod /vendor/lib/modules/qti_battery_charger_main.ko
- insmod /vendor/lib/modules/xiaomi_touch.ko
- echo "DEBUG: Loading ofox kernel modules" >> $LOG
+
+ echo "DEBUG: Using inline modules" >> $LOG
 
 }
 
@@ -38,7 +30,7 @@ kernel=$(getprop ro.orangefox.kernel)
 echo $kernel
 
 case $kernel in
-    "5.4.191-ofox-AtomX-v6.0-@273a6d99")
+    "5.4.195-AtomX-v6.9-@9272480f")
         load_ofox
         ;;
     *)
