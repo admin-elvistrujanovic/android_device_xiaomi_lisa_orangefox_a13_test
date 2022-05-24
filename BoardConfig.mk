@@ -94,7 +94,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 
 BOARD_MKBOOTIMG_ARGS += --dtb $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 
 # Kernel modules
 NEED_KERNEL_MODULE_RECOVERY := true
