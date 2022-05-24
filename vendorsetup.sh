@@ -80,7 +80,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# screen settings
 	     export OF_SCREEN_H=2400
-	     export OF_STATUS_H=120
+	     export OF_STATUS_H=144
 	     export OF_STATUS_INDENT_LEFT=200
 	     export OF_STATUS_INDENT_RIGHT=48
 	     export OF_CLOCK_POS="0"
