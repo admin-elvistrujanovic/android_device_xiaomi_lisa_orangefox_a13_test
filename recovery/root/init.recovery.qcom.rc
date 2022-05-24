@@ -19,19 +19,19 @@ on fs
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
 
-service kernel-script /system/bin/kernel-script.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+#service kernel-script /system/bin/kernel-script.sh
+#   user root
+#    group root
+#    disabled
+#    oneshot
+#    seclabel u:r:recovery:s0
 
 on post-fs
     start boot-hal-1-1
 
 on boot
-    chmod 0777 /system/bin/kernel-script.sh
-    start kernel-script
+#    chmod 0777 /system/bin/kernel-script.sh
+#    start kernel-script
     start health-hal-2-1
 
 on property:twrp.modules.loaded=true
