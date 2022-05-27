@@ -1,0 +1,6 @@
+hwid.ko
+goodix_core.ko
+xiaomi_touch.ko
+adsp_loader_dlkm.ko
+qti_battery_charger_main.ko
+q6_notifier_dlkm.ko
