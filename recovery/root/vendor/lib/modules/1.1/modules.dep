@@ -1,4 +1,1 @@
-/lib/modules/goodix_core.ko: /lib/modules/xiaomi_touch.ko
-/lib/modules/xiaomi_touch.ko:
-/lib/modules/hwid.ko:
-/lib/modules/qti_battery_charger_main.ko:
+/vendor/lib/modules/1.1/msm_drm.ko:

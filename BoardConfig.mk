@@ -90,10 +90,9 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
                    ip6table_raw.raw_before_defrag=1 \
                    androidboot.init_fatal_reboot_target=recovery"
 
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtbs
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 
 # Kernel modules
 NEED_KERNEL_MODULE_RECOVERY := true
