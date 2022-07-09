@@ -97,6 +97,9 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 # Kernel modules
 NEED_KERNEL_MODULE_RECOVERY := true
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := lisa,lisa_in,lisa_cn,lisa_global
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true

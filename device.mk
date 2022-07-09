@@ -112,7 +112,7 @@ PRODUCT_PACKAGES += \
     qcom_decrypt_fbe
 
 TW_LOAD_VENDOR_MODULES := "goodix_core.ko adsp_loader_dlkm.ko qti_battery_charger_main.ko xiaomi_touch.ko"
-
+# q6_pdr_dlkm.ko q6_notifier_dlkm.ko snd_event_dlkm.ko apr_dlkm.ko                                           #extra modules which might be needed 
 TARGET_RECOVERY_DEVICE_MODULES += \
     libdisplayconfig.qti \
     libion \
