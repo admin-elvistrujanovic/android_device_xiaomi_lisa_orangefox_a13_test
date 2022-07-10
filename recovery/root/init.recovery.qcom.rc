@@ -18,9 +18,6 @@ on fs
     chmod 0770 /dev/fscklogs/log
     start boot-hal-1-1
 
-on boot
-    setprop sys.usb.config mtp,adb
-
 on property:twrp.modules.loaded=true
     # Load ADSP firmware for PMIC
     wait /sys/kernel/boot_adsp/boot
