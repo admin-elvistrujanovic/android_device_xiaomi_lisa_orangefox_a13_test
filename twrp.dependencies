@@ -1,8 +1,0 @@
-[
- {
-    "remote":      "Atom-X-Devs",
-    "repository":  "android_kernel_xiaomi_sm7325",
-    "target_path": "kernel/xiaomi/lisa",
-    "revision":    "inline"
- }
- ]
