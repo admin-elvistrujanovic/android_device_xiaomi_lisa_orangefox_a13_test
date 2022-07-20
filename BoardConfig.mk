@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/dubai
+DEVICE_PATH := device/xiaomi/lisa
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
