@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 cc_library {
-    name: "libgptutils.dubai",
+    name: "libgptutils.lahaina",
     vendor: true,
     recovery_available: true,
     shared_libs: [
