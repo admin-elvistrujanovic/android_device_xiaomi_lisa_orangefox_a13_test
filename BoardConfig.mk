@@ -70,16 +70,39 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 BOARD_BOOTIMG_HEADER_VERSION := 3
-BOARD_INCLUDE_RECOVERY_DTBO := true
+
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
+
+VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
+                   androidboot.hardware=qcom \
+                   androidboot.console=ttyMSM0 \
+                   androidboot.memcg=1 \
+                   lpm_levels.sleep_disabled=1 \
+                   video=vfb:640x400,bpp=32,memsize=3072000 \
+                   msm_rtb.filter=0x237 \
+                   service_locator.enable=1 \
+                   androidboot.usbcontroller=a600000.dwc3 \
+                   swiotlb=0 \
+                   loop.max_part=7 \
+                   cgroup.memory=nokmem,nosocket \
+                   pcie_ports=compat \
+                   loop.max_part=7 \
+                   iptable_raw.raw_before_defrag=1 \
+                   ip6table_raw.raw_before_defrag=1 \
+                   androidboot.init_fatal_reboot_target=recovery \
+                   androidboot.selinux=permissive"
+
+BOARD_KERNEL_IMAGE_NAME := kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/lisa/kernel
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/lisa/dtbo.img
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/lisa/dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := lahaina

@@ -62,7 +62,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/qcom-caf/bootctrl \
     vendor/qcom/opensource/commonsys-intf/display
-	
+
+#Prebuilt Kernel
+TWRP_REQUIRED_MODULES += miui_prebuilt
+
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
