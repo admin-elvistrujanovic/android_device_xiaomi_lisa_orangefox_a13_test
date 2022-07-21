@@ -1,4 +1,4 @@
-	//
+//
 // Copyright (C) 2018 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+
+
 cc_library {
-    name: "libgptutils.lahaina",
+    name: "libgptutils.lisa",
     vendor: true,
     recovery_available: true,
     shared_libs: [
@@ -25,12 +27,16 @@ cc_library {
     cflags: [
         "-Wall",
         "-Werror",
-        "-D_BSG_FRAMEWORK_KERNEL_HEADERS",
+        "-Wno-unused-parameter",
+        "-D_GENERIC_KERNEL_HEADERS",
     ],
     srcs: [
         "gpt-utils.cpp",
         "recovery-ufs-bsg.cpp",
     ],
     owner: "qti",
+    header_libs: [
+        "device_kernel_headers",
+    ],
     export_include_dirs: ["."],
 }
