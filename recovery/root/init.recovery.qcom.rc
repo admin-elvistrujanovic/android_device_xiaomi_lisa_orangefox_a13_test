@@ -37,7 +37,7 @@ on early-init
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on init
-    mount_all /vendor/etc/charger_fw_fstab.qti --early
+    mount_all /vendor/etc/charger_fstab.qti --early
     write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
     mount tmpfs tmpfs /tmp size=80%
@@ -72,7 +72,6 @@ on property:modem.partition.mounted=1
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    write /sys/class/oplus_chg/usb/otg_switch 1
 
 on late-fs
      start keymasterd

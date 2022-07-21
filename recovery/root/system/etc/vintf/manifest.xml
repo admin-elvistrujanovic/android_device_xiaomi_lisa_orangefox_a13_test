@@ -2,8 +2,6 @@
     Input:
         manifest.xml
         framework_manifest.xml
-        manifest_oplus_commondcs.xml
-        manifest_oplus_orms.xml
 -->
 <manifest version="2.0" type="framework">
     <hal format="hidl">
@@ -91,26 +89,6 @@
         <version>1.0</version>
     </hal>
     <hal format="hidl">
-        <name>vendor.oplus.hardware.commondcs</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICommonDcsHalService</name>
-            <instance>commondcsservice</instance>
-        </interface>
-        <fqname>@1.0::ICommonDcsHalService/commondcsservice</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oplus.hardware.orms</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOrmsHalProxy</name>
-            <instance>ORMS_HAL_PROXY</instance>
-        </interface>
-        <fqname>@1.0::IOrmsHalProxy/ORMS_HAL_PROXY</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.qccsyshal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -139,6 +117,21 @@
             <instance>sigmahal</instance>
         </interface>
         <fqname>@1.0::Isigma_miracast/sigmahal</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.systemhelper</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISystemEvent</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISystemResource</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ISystemEvent/default</fqname>
+        <fqname>@1.0::ISystemResource/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.wifi.keystore</name>
