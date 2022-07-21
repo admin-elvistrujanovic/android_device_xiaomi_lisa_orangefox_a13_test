@@ -16,13 +16,22 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/realme/RMX3360
+LOCAL_PATH := device/xiaomi/lisa
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Enable virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # A/B support
 AB_OTA_UPDATER := true
@@ -48,8 +57,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-service \
+    android.hardware.boot@1.1-impl-wrapper.recovery \
+    android.hardware.boot@1.1-impl-wrapper \
     android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-service
+    bootctrl.lahaina \
+    bootctrl.lahaina.recovery
 
 PRODUCT_PACKAGES += \
     libz \
@@ -81,6 +95,9 @@ PRODUCT_PACKAGES += \
 # tzdata
 PRODUCT_PACKAGES += \
     tzdata_twrp
+
+#Prebuilt Kernel
+TWRP_REQUIRED_MODULES += miui_prebuilt
 
 # Apex libraries
 PRODUCT_COPY_FILES += \
