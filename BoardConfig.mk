@@ -91,9 +91,7 @@ VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
                    pcie_ports=compat \
                    loop.max_part=7 \
                    iptable_raw.raw_before_defrag=1 \
-                   ip6table_raw.raw_before_defrag=1 \
-                   androidboot.init_fatal_reboot_target=recovery \
-                   androidboot.selinux=permissive"
+                   ip6table_raw.raw_before_defrag=1"
 
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/lisa/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/lisa/dtbo.img
