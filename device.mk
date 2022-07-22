@@ -58,6 +58,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+#  Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
