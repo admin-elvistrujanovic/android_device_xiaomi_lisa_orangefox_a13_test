@@ -47,13 +47,8 @@ PRODUCT_PACKAGES_DEBUG += \
     
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl \
-    android.hardware.boot@1.1-service \
-    android.hardware.boot@1.1-impl-wrapper.recovery \
-    android.hardware.boot@1.1-impl-wrapper \
-    android.hardware.boot@1.1-impl.recovery \
-    bootctrl.lahaina \
-    bootctrl.lahaina.recovery
+    bootctrl.lahaina.recovery \
+    android.hardware.boot@1.1-impl-qti.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
